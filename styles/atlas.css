@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    background-color: #57c981;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 400px) {
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+  
+.hero__overlay {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+  
+.wallet-buttons {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+  
+#walletBtnWrapper {
+    position: fixed;
+    z-index: 2;
+    top: 55px;
+    right: 30px;
+}
+  
+#shopBtnWrapper {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+  
+.wallet-connect__button,
+.shopNow {
+  pointer-events: auto;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  background-color: #135029;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.wallet-connect__button:hover,
+.shopNow:hover {
+  background-color: #1a6634;
+  transform: scale(1.05);
+}
+
+.hero__content  {
+    position: fixed;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    top: 20px;
+    left: 30px;
+}
+
+.hero__content h1 {
+    font-size: 2.5rem;
+}
+
+.hero__content h2 {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    font-size: 1.2rem;
+}
+
+.mountainLogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}

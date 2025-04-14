@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeonWear | Future of Fashion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/atlas.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+</head>
+<body>
+
+  <!-- Hero Section with Fullscreen 4K Video Background -->
+  <header class="hero">
+    <video class="hero__video" autoplay muted loop playsinline>
+      <source src="https://xrv-xrc.s3.ap-south-1.amazonaws.com/Metadrip/bg_video_desktop.mp4" type="video/mp4" />
+    </video>
+    <div class="hero__overlay">
+      <div class="wallet-buttons">
+        <div id="walletBtnWrapper">
+          <button class="wallet-connect__button" id="connectWalletBtn">Connect Wallet</button>
+        </div>
+        <div id="shopBtnWrapper">
+          <button class="shopNow" id="shopNow">Shop Now</button>
+        </div>
+      </div>      
+      <div class="hero__content" data-aos="fade-up">
+        <h1 class="hero__logo">Atlas</h1>
+        <h2>Club</h2>
+        <img src="../images/mountainLogo.png" alt="mountainLogo" class="mountainLogo">
+      </div>
+    </div>
+    
+  </header>
+  <!-- Web3 Wallet Connect Placeholder -->
+  <section class="wallet-connect" data-aos="fade-in">
+    <div class="wallet-connect__container">
+      <h2></h2>
+    </div>
+  </section>
+
+  <section class="carousel" data-aos="fade-up">
+    <div class="carousel__container">
+      <h2 class="carousel__title">Digital Drip | NFT Wearables</h2>
+  
+      <!-- SCROLLABLE TRACK -->
+      <div class="carousel__scroll-wrapper" data-carousel>
+        <div class="carousel__track">
+  
+          <!-- Card 1 -->
+          <div class="carousel__item">
+            <img src="images/look1.png" alt="Fashion Item 1" class="carousel__image">
+          </div>
+  
+          <!-- Card 2 -->
+          <div class="carousel__item">
+            <img src="images/look2.png" alt="Fashion Item 2" class="carousel__image">
+          </div>
+  
+          <!-- Center Card (initially in focus) -->
+          <div class="carousel__item carousel__item--center">
+            <img src="images/look-main.png" alt="Main Fashion Item" class="carousel__image">
+            <div class="carousel__cta">
+              <button class="btn btn--buy">BUY NOW</button>
+            </div>
+          </div>
+  
+          <!-- Card 4 -->
+          <div class="carousel__item">
+            <img src="images/look3.png" alt="Fashion Item 3" class="carousel__image">
+          </div>
+  
+          <!-- Card 5 -->
+          <div class="carousel__item">
+            <img src="images/look4.png" alt="Fashion Item 4" class="carousel__image">
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Products -->
+  <section id="products" class="products" data-aos="fade-up">
+    <div class="products__container">
+      <h2 class="products__title">Featured Drops</h2>
+      <div class="products__grid">
+        <article class="product-card">
+          <img src="placeholder1.jpg" alt="Product 1" class="product-card__image"/>
+          <h3 class="product-card__name">Cyber Jacket</h3>
+          <p class="product-card__price">0.07 ETH</p>
+          <button class="product-card__btn">Buy Now</button>
+        </article>
+        <article class="product-card">
+          <img src="placeholder2.jpg" alt="Product 2" class="product-card__image"/>
+          <h3 class="product-card__name">NFT Tee</h3>
+          <p class="product-card__price">0.03 ETH</p>
+          <button class="product-card__btn">Buy Now</button>
+        </article>
+        <!-- Add more products as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" data-aos="fade-up">
+    <div class="about__container">
+      <h2 class="about__title">Our Vision</h2>
+      <p class="about__text">
+        NeonWear blends urban fashion with blockchain tech. Each item is paired with an NFT for authenticity, ownership, and access to future drops.
+      </p>
+    </div>
+  </section>
+
+  <!-- NFT Showcase Placeholder -->
+  <section class="nft-showcase" data-aos="fade-up">
+    <div class="nft-showcase__container">
+      <h2 class="nft-showcase__title">Your Wardrobe, On-Chain</h2>
+      <div class="nft-showcase__grid">
+        <!-- Placeholder for NFT-linked products or previews -->
+        <div class="nft-item">[NFT Item 1]</div>
+        <div class="nft-item">[NFT Item 2]</div>
+        <!-- Expand as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" data-aos="fade-up">
+    <div class="testimonials__container">
+      <h2 class="testimonials__title">What Our Tribe Says</h2>
+      <div class="testimonials__list">
+        <blockquote class="testimonial">
+          <p class="testimonial__text">“Never thought blockchain and fashion could collide like this. Insane style!”</p>
+          <cite class="testimonial__author">— Sam D.</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p class="testimonial__text">“Wearing my NFT tee feels like owning a piece of the future.”</p>
+          <cite class="testimonial__author">— Kira L.</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter" data-aos="fade-up">
+    <div class="newsletter__container">
+      <h2 class="newsletter__title">Join the Movement</h2>
+      <form class="newsletter__form">
+        <input type="email" class="newsletter__input" placeholder="Enter your email" required />
+        <button type="submit" class="newsletter__submit">Subscribe</button>
+      </form>
+      <p class="newsletter__note">Get early access to drops, events, and token rewards.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__nav">
+        <a href="#products" class="footer__link">Shop</a>
+        <a href="#about" class="footer__link">About</a>
+        <a href="#testimonials" class="footer__link">Testimonials</a>
+        <a href="#newsletter" class="footer__link">Newsletter</a>
+      </div>
+      <div class="footer__socials">
+        <a href="#" class="footer__social-link">Instagram</a>
+        <a href="#" class="footer__social-link">Twitter</a>
+        <a href="#" class="footer__social-link">Discord</a>
+      </div>
+      <p class="footer__copy">&copy; 2025 NeonWear. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
