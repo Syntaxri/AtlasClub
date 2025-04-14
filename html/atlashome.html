@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeonWear | Future of Fashion</title>
+  <title>Atlas Club | Future of Fashion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
@@ -11,8 +11,6 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
-
-  <!-- Hero Section with Fullscreen 4K Video Background -->
   <header class="hero">
     <video class="hero__video" autoplay muted loop playsinline>
       <source src="https://xrv-xrc.s3.ap-south-1.amazonaws.com/Metadrip/bg_video_desktop.mp4" type="video/mp4" />
@@ -32,52 +30,35 @@
         <img src="../images/mountainLogo.png" alt="mountainLogo" class="mountainLogo">
       </div>
     </div>
-    
   </header>
-  <!-- Web3 Wallet Connect Placeholder -->
-  <section class="wallet-connect" data-aos="fade-in">
-    <div class="wallet-connect__container">
-      <h2></h2>
-    </div>
-  </section>
-
   <section class="carousel" data-aos="fade-up">
-    <div class="carousel__container">
-      <h2 class="carousel__title">Digital Drip | NFT Wearables</h2>
-  
-      <!-- SCROLLABLE TRACK -->
-      <div class="carousel__scroll-wrapper" data-carousel>
-        <div class="carousel__track">
-  
+    <div class="carousel_items">
+      <h2 class="title" style="font-family: 'Audiowide', sans-serif; font-weight: 400; font-size: 2rem;text-align: center;margin-bottom: 2rem;">Only Real Ones Know</h2>
+      <div class="videos">
           <!-- Card 1 -->
-          <div class="carousel__item">
-            <img src="images/look1.png" alt="Fashion Item 1" class="carousel__image">
+          <div class="carousel_1">
+            <video class="carousel__video" autoplay muted loop playsinline>
+              <source src="https://xrv-xrc.s3.ap-south-1.amazonaws.com/Metadrip/9.mp4" type="video/mp4" />
+            </video>
           </div>
-  
           <!-- Card 2 -->
-          <div class="carousel__item">
-            <img src="images/look2.png" alt="Fashion Item 2" class="carousel__image">
+          <div class="carousel_2">
+            <video class="carousel__video" autoplay muted loop playsinline>
+              <source src="https://xrv-xrc.s3.ap-south-1.amazonaws.com/Metadrip/11.mp4" type="video/mp4" />
+            </video>
           </div>
-  
-          <!-- Center Card (initially in focus) -->
-          <div class="carousel__item carousel__item--center">
-            <img src="images/look-main.png" alt="Main Fashion Item" class="carousel__image">
-            <div class="carousel__cta">
-              <button class="btn btn--buy">BUY NOW</button>
-            </div>
+          <!-- Card 3 -->
+          <div class="carousel_3">
+            <video class="carousel__video" autoplay muted loop playsinline>
+              <source src="https://xrv-xrc.s3.ap-south-1.amazonaws.com/Metadrip/9.mp4" type="video/mp4" />
+            </video>
           </div>
-  
           <!-- Card 4 -->
-          <div class="carousel__item">
-            <img src="images/look3.png" alt="Fashion Item 3" class="carousel__image">
+          <div class="carousel_4">
+            <video class="carousel__video" autoplay muted loop playsinline>
+              <source src="https://xrv-xrc.s3.ap-south-1.amazonaws.com/Metadrip/11.mp4" type="video/mp4" />
+            </video>
           </div>
-  
-          <!-- Card 5 -->
-          <div class="carousel__item">
-            <img src="images/look4.png" alt="Fashion Item 4" class="carousel__image">
-          </div>
-  
-        </div>
       </div>
     </div>
   </section>
@@ -176,6 +157,7 @@
 
   <!-- AOS Animation Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../scripts/atlas.js"></script>
   <script>
     AOS.init({
       duration: 1000,
