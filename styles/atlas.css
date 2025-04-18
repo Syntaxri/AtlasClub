@@ -178,7 +178,7 @@ header video {
 
 @media screen and (max-width: 600px) {
   .premium-child h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 10px;
   }
 }
@@ -326,31 +326,40 @@ header video {
 }
 
 @media screen and (max-width: 600px) {
-  .premium-child .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 180vh;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
+  .container {
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 70%;
+    height: 330px;
   }
 
+  .container .slide .item:nth-child(3) {
+    left: 140px;
+    width: 60%;
+    height: 60%;
+  }
+  
   .premium-child .content .name,
   .premium-child .content .des,
   .premium-child .content button {
       display: none;
+      width: 10%;
   }
 
   .premium-child .container {
     margin-top: 30px;
   }
+
+  .button {
+    display: none;
+  }
 }
 
 .mobile {
   display: none;
-  margin-top: 600px;
+  margin-top: 350px;
 }
 
 .mobile-only-btn a{
@@ -376,8 +385,7 @@ header video {
       border: none;
       border-radius: 35px;
       cursor: pointer;
-      margin-top: 90px;
-      z-index: 10;
+      z-index: 100;
   }
 }
 
@@ -389,7 +397,7 @@ align-items: center;
 padding: 60px 20px;
 max-width: 1200px;
 margin: 0px auto;
-margin-top: 700px; /* subtle light background */
+margin-top: 400px; /* subtle light background */
 border-radius: 15px;
 gap: 40px;
 color: #e8f0e8;
@@ -419,32 +427,32 @@ color: white;
 
 /* Quote Container (Right) */
 .quote__container {
-flex: 1 1 40%;
-background-color: white;
-color: black;
-padding: 40px 30px;
-border-radius: 15px;
-font-size: 1.4rem;
-font-weight: bold;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-box-shadow: 0 8px 20px rgba(19, 80, 41, 0.3);
-user-select: none;
-transition: background-color 0.3s ease;
+  flex: 1 1 40%;
+  background-color: white;
+  color: black;
+  padding: 40px 30px;
+  border-radius: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(19, 80, 41, 0.3);
+  user-select: none;
+  transition: background-color 0.3s ease;
 }
 
 .quote__container strong {
-font-weight: 900;
-color: #135029;
-text-decoration: underline;
+  font-weight: 900;
+  color: #135029;
+  text-decoration: underline;
 }
 
 /* Hover effect on quote (optional) */
 .quote__container:hover {
-background-color: #e8f0e8;
-cursor: default;
+  background-color: #e8f0e8;
+  cursor: default;
 }
 
 /* Responsive Layout */
@@ -454,6 +462,7 @@ cursor: default;
 .about {
   flex-direction: column;
   padding: 40px 15px;
+  
 }
 
 .about__container,
@@ -587,18 +596,6 @@ cursor: default;
   transform: scale(1.05);
 }
 
-
-@media (max-width: 600px) {
-  .products__title {
-    font-size: 2rem;
-  }
-
-  .product-card {
-    max-width: 100%;
-  }
-}
-
-
 /* Responsive adjustments for tablets */
 @media (max-width: 1406px) {
   .products__grid {
@@ -624,10 +621,10 @@ cursor: default;
 @media (max-width: 700px) {
   .products__grid {
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 40px;
   }
   .product-card {
-    max-width: 95%;
+    max-width: 90%;
     padding: 15px;
   }
   .products__title {
@@ -641,26 +638,36 @@ cursor: default;
 /* Responsive adjustments for mobile devices */
 @media (max-width: 480px) {
   .products__grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
   .product-card {
     max-width: 90%;
-    padding: 10px;
+    padding: 15px;
   }
   .products__title {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
   }
   #products {
-    padding: 20px 2px;
+    padding: 10px 15px;
   }
   .product-card__btn {
     padding: 10px 15px;
-    font-size: 0.95rem;
+    font-size: 0.6rem;
   }
-  .products {
-      margin-top: 0px;
+  .product-card__name {
+    font-size: 0.8rem;
+  }
+
+  .product-card__price {
+    font-size: 0.8rem;
+  }
+  .product-card__image{
+    width: 110%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
   }
 }
 
