@@ -114,7 +114,7 @@ header video {
 .hero__content h2 {
   position: absolute;
   top: 40px;
-  left: 60px;
+  left: 55px;
   font-size: 1rem;
 }
 
@@ -125,6 +125,39 @@ header video {
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .hero__content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero__content h2 {
+    font-size: 0.8rem;
+    top: 30px;
+    left: 40px;
+  }
+  
+  #walletBtnWrapper {
+    top: 20px;
+    right: 10px;
+  }
+
+  .wallet-connect__button {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+
+  #shopBtnWrapper {
+    top: 85%;
+    right: 10px;
+  }
+
+  .shopNow {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    top: 0px;
+  }
 }
 
 .premium-child {
@@ -141,6 +174,13 @@ header video {
   font-family: "Audiowide", sans-serif;
   margin-top: 20px;
   color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .premium-child h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
 }
 
 .container{
