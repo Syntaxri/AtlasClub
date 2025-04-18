@@ -166,6 +166,7 @@ header video {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  position: relative; /* ensure relative for any absolute children */
 }
 
 .premium-child h2 {
@@ -183,18 +184,26 @@ header video {
   }
 }
 
-.container{
-  position: absolute;
-  top: 435px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Fix: Remove absolute positioning from container */
+.container {
+  position: relative; /* changed from absolute */
+  margin: 40px auto 0; /* add top margin to separate from heading */
   width: 100%;
   max-width: 1250px;
-  height: 680px;
-  
+  height: 680px; /* fixed height for carousel */
 }
 
-.container .slide .item{
+/* Responsive container adjustments */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 90%;
+    height: 330px;
+    margin-top: 30px;
+  }
+}
+
+/* Carousel slide and item styles */
+.container .slide .item {
   width: 200px;
   height: 300px;
   position: absolute;
@@ -209,7 +218,7 @@ header video {
 }
 
 .slide .item:nth-child(1),
-.slide .item:nth-child(2){
+.slide .item:nth-child(2) {
   top: 0;
   left: 0;
   transform: translate(0, 0);
@@ -219,23 +228,25 @@ header video {
   height: 100%;
 }
 
-.slide .item:nth-child(3){
+.slide .item:nth-child(3) {
   left: 50%;
 }
-.slide .item:nth-child(4){
+
+.slide .item:nth-child(4) {
   left: calc(50% + 220px);
 }
-.slide .item:nth-child(5){
+
+.slide .item:nth-child(5) {
   left: calc(50% + 440px);
 }
 
-/* here n = 0, 1, 2, 3,... */
-.slide .item:nth-child(n + 6){
+/* Items beyond 5th */
+.slide .item:nth-child(n + 6) {
   left: calc(50% + 660px);
   opacity: 0;
 }
 
-.item .content{
+.item .content {
   position: absolute;
   top: 50%;
   left: 100px;
@@ -247,13 +258,11 @@ header video {
   display: none;
 }
 
-
-.slide .item:nth-child(2) .content{
+.slide .item:nth-child(2) .content {
   display: block;
 }
 
-
-.content .name{
+.content .name {
   font-size: 40px;
   text-transform: uppercase;
   color: #135029;
@@ -262,7 +271,7 @@ header video {
   animation: animate 1s ease-in-out 1 forwards;
 }
 
-.content .des{
+.content .des {
   margin-top: 10px;
   margin-bottom: 20px;
   color: #000;
@@ -271,7 +280,7 @@ header video {
   animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
 
-.content button{
+.content button {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -285,29 +294,27 @@ header video {
   animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
 
-
 @keyframes animate {
-  from{
-      opacity: 0;
-      transform: translate(0, 100px);
-      filter: blur(33px);
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
   }
-
-  to{
-      opacity: 1;
-      transform: translate(0);
-      filter: blur(0);
+  to {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
   }
 }
 
-.button{
+.button {
   width: 100%;
   text-align: center;
   position: absolute;
   bottom: 20px;
 }
 
-.button button{
+.button button {
   width: 40px;
   height: 35px;
   border-radius: 8px;
@@ -320,36 +327,29 @@ header video {
   transition: 0.3s;
 }
 
-.button button:hover{
+.button button:hover {
   background: #1a6634;
   color: #000;
 }
 
 @media screen and (max-width: 600px) {
   .container {
-    top: 200px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 70%;
-    height: 330px;
+    max-width: 75%;
+    height: 400px;
+    margin-top: 0px;
   }
 
   .container .slide .item:nth-child(3) {
-    left: 140px;
+    left: 155px;
     width: 60%;
     height: 60%;
   }
-  
+
   .premium-child .content .name,
   .premium-child .content .des,
   .premium-child .content button {
-      display: none;
-      width: 10%;
-  }
-
-  .premium-child .container {
-    margin-top: 30px;
+    display: none;
+    width: 10%;
   }
 
   .button {
@@ -359,70 +359,74 @@ header video {
 
 .mobile {
   display: none;
-  margin-top: 350px;
+  margin-top: 420px;
 }
 
-.mobile-only-btn a{
+.mobile-only-btn a {
   text-decoration: none;
   color: #135029;
 }
 
 @media (max-width: 600px) {
   .mobile {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
+
   .mobile-only-btn {
-      display: block;
-      padding: 12px 24px;
-      background: #eee;
-      font-family: "Audiowide", sans-serif;
-      font-weight: bold;
-      font-size: 1.2rem;
-      font-style: normal;
-      border: none;
-      border-radius: 35px;
-      cursor: pointer;
-      z-index: 100;
+    display: block;
+    padding: 12px 24px;
+    background: #eee;
+    font-family: "Audiowide", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-style: normal;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+  }
+
+  .mobile :hover {
+    color: white;
+    background: #135029;
   }
 }
 
 /* About Section Container */
 .about {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 60px 20px;
-max-width: 1200px;
-margin: 0px auto;
-margin-top: 400px; /* subtle light background */
-border-radius: 15px;
-gap: 40px;
-color: #e8f0e8;
-font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 80px; /* Reduced margin */
+  border-radius: 15px;
+  gap: 40px;
+  color: #e8f0e8;
+  font-family: "Inter", sans-serif;
 }
 
 /* About Text Container (Left) */
 .about__container {
-flex: 1 1 55%;
-text-align: left;
+  flex: 1 1 55%;
+  text-align: left;
 }
 
 /* About Title */
 .about__title {
-font-family: "Audiowide", sans-serif;
-font-size: 2.8rem;
-margin-bottom: 10px;
-color: white;
+  font-family: "Audiowide", sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: white;
 }
 
 /* About Text */
 .about__text {
-font-size: 1.2rem;
-line-height: 1.6;
-color: white;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: white;
 }
 
 /* Quote Container (Right) */
@@ -459,51 +463,50 @@ color: white;
 
 /* Medium screens (tablets) */
 @media (max-width: 900px) {
-.about {
-  flex-direction: column;
-  padding: 40px 15px;
-  
-}
+  .about {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
 
-.about__container,
-.quote__container {
-  flex: 1 1 100%;
-  max-width: 100%;
-  margin-bottom: 0px;
-}
+  .about__container,
+  .quote__container {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
 
-.quote__container {
-  font-size: 1.2rem;
-  padding: 30px 20px;
-}
+  .quote__container {
+    font-size: 1.2rem;
+    padding: 30px 20px;
+  }
 
-.about__title {
-  font-size: 2rem;
-}
+  .about__title {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 600px) {
-.about__container,
-.quote__container {
-  margin-top: 0px;
-}
+  .about__container,
+  .quote__container {
+    margin-top: 0;
+  }
 }
 
 /* Small screens (phones) */
 @media (max-width: 480px) {
-.about__title {
-  font-size: 1.6rem;
-}
+  .about__title {
+    font-size: 1.6rem;
+  }
 
-.about__text {
-  font-size: 1rem;
-}
+  .about__text {
+    font-size: 1rem;
+  }
 
-.quote__container {
-  font-size: 1rem;
-  padding: 25px 15px;
-  margin-top: 0px;
-}
+  .quote__container {
+    font-size: 1rem;
+    padding: 25px 15px;
+    margin-top: 0;
+  }
 }
 
 /* Section container styling */
