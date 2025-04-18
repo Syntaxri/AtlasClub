@@ -102,7 +102,7 @@ header video {
 
 .hero__content {
   position: fixed;
-  top: 20px;
+  top: 5px;
   left: 20px;
   font-family: "Audiowide", sans-serif;
 }
@@ -641,7 +641,6 @@ border-radius: 15px;
 padding: 40px 30px;
 position: relative;
 font-size: 1.6rem;
-font-style: italic;
 line-height: 1.5;
 color: white;
 margin-bottom: 20px;
