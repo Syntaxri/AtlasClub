@@ -899,9 +899,11 @@ letter-spacing: 1px;
 
 /* Testimonials Section */
 /* Container & Section */
+/* Container & Section */
 .testimonials {
   padding: 80px 20px;
   font-family: "Inter", sans-serif;
+  color: #135029;
   text-align: center;
 }
 
@@ -1054,7 +1056,6 @@ letter-spacing: 1px;
   }
 }
 
-
 /* Newsletter Signup */
 .newsletter {
 padding: 80px 20px;
@@ -1132,104 +1133,103 @@ gap: 20px;
 }
 
 .footer__logo {
-width: 90px; /* Adjust size as needed */
-height: auto;
-margin-right: 20px; /* Add some spacing next to the logo */
-display: inline-block; /* To control margin properly */
+  width: 90px; /* Adjust size as needed */
+  height: auto;
+  display: inline-block; /* To control margin properly */
 }
 
 .footer__nav {
-display: flex;
-gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .footer__link {
-color: white;
-text-decoration: none;
-transition: color 0.3s;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .footer__link:hover {
-color: #fede00;
+  color: #fede00;
 }
 
 .footer__socials {
-display: flex;
-gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .footer__social-link {
-color: white;
-text-decoration: none;
-transition: color 0.3s;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .footer__social-link:hover {
-color: #fede00;
+  color: #fede00;
 }
 
 .footer__copy {
-font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 900px) {
-.testimonials__title {
-  font-size: 2rem;
-}
-.testimonial {
-  max-width: 100%;
-}
-.newsletter__title {
-  font-size: 1.8rem;
-}
-.footer__container {
-  flex-direction: column;
-  align-items: center;
-}
-.footer__nav,
-.footer__socials {
-  flex-direction: row;
-}
+  .testimonials__title {
+    font-size: 2rem;
+  }
+  .testimonial {
+    max-width: 100%;
+  }
+  .newsletter__title {
+    font-size: 1.8rem;
+  }
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__nav,
+  .footer__socials {
+    flex-direction: row;
+  }
 }
 
 @media (max-width: 600px) {
-.testimonials {
-  padding: 60px 10px;
-}
-.testimonials__list {
-  gap: 30px;
-}
-.testimonial {
-  padding: 20px;
-}
-.testimonial__text {
-  font-size: 1.1rem;
-}
-.newsletter {
-  padding: 60px 10px;
-}
-.newsletter__form {
-  flex-direction: column;
-}
-.newsletter__input {
-  padding: 10px 15px;
-  font-size: 0.9rem;
-  width: auto;
-}
-.newsletter__submit {
-  padding: 12px 25px;
-  font-size: 1rem;
-}
-.footer {
-  padding: 30px 10px;
-}
-.footer__nav,
-.footer__socials {
-  flex-direction: column;
-  gap: 10px;
-}
-.footer__copy {
-  font-size: 0.8rem;
-}
+  .testimonials {
+    padding: 60px 10px;
+  }
+  .testimonials__list {
+    gap: 30px;
+  }
+  .testimonial {
+    padding: 20px;
+  }
+  .testimonial__text {
+    font-size: 1.1rem;
+  }
+  .newsletter {
+    padding: 60px 10px;
+  }
+  .newsletter__form {
+    flex-direction: column;
+  }
+  .newsletter__input {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    width: auto;
+  }
+  .newsletter__submit {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  .footer {
+    padding: 30px 10px;
+  }
+  .footer__nav,
+  .footer__socials {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer__copy {
+    font-size: 0.8rem;
+  }
 }
