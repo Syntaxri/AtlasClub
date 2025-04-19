@@ -143,3 +143,223 @@ document.addEventListener('DOMContentLoaded', () => {
     easing: 'ease-in-out'
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const connectWalletBtn = document.getElementById('connectWalletBtn');
+  const disconnectWalletBtn = document.getElementById('disconnectWalletBtn');
+  const walletInfoDiv = document.getElementById('walletInfo');
+  const walletAddressSpan = document.getElementById('walletAddress');
+  const chainIdSpan = document.getElementById('chainId');
+
+  // Check if MetaMask is installed
+  function isMetaMaskInstalled() {
+      return typeof window.ethereum !== 'undefined';
+  }
+
+  // Function to connect to MetaMask
+  async function connectWallet() {
+      if (isMetaMaskInstalled()) {
+          try {
+              // Request account access
+              const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+              const walletAddress = accounts[0];
+
+              // Get chain ID
+              const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+
+              // Display wallet info
+              walletAddressSpan.textContent = walletAddress;
+              chainIdSpan.textContent = chainId;
+              walletInfoDiv.style.display = 'block';
+              connectWalletBtn.style.display = 'none';
+
+              // Listen for account changes
+              window.ethereum.on('accountsChanged', (accounts) => {
+                  if (accounts.length === 0) {
+                      // Handle disconnection
+                      disconnectWallet();
+                  } else {
+                      walletAddressSpan.textContent = accounts[0];
+                  }
+              });
+
+              // Listen for chain ID changes
+              window.ethereum.on('chainChanged', (newChainId) => {
+                  chainIdSpan.textContent = newChainId;
+              });
+          } catch (error) {
+              console.error("User denied account access or error occurred:", error);
+              alert("Could not connect wallet. Please make sure MetaMask is unlocked and try again.");
+          }
+      } else {
+          alert("MetaMask is not installed. Please install MetaMask to use this feature.");
+      }
+  }
+
+  // Function to disconnect wallet
+  function disconnectWallet() {
+      walletAddressSpan.textContent = '';
+      chainIdSpan.textContent = '';
+      walletInfoDiv.style.display = 'none';
+      connectWalletBtn.style.display = 'block';
+  }
+
+  // Event listener for connect wallet button
+  connectWalletBtn.addEventListener('click', connectWallet);
+
+  // Event listener for disconnect wallet button
+  disconnectWalletBtn.addEventListener('click', disconnectWallet);
+
+  // Check if already connected on page load
+  async function checkConnection() {
+      if (isMetaMaskInstalled()) {
+          try {
+              const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+              if (accounts.length > 0) {
+                  // Already connected
+                  const walletAddress = accounts[0];
+                  const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+
+                  walletAddressSpan.textContent = walletAddress;
+                  chainIdSpan.textContent = chainId;
+                  walletInfoDiv.style.display = 'block';
+                  connectWalletBtn.style.display = 'none';
+
+                  // Listen for account changes
+                  window.ethereum.on('accountsChanged', (accounts) => {
+                      if (accounts.length === 0) {
+                          // Handle disconnection
+                          disconnectWallet();
+                      } else {
+                          walletAddressSpan.textContent = accounts[0];
+                      }
+                  });
+
+                  // Listen for chain ID changes
+                  window.ethereum.on('chainChanged', (newChainId) => {
+                      chainIdSpan.textContent = newChainId;
+                  });
+              }
+          } catch (error) {
+              console.error("Error checking connection:", error);
+          }
+      }
+  }
+
+  checkConnection();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const walletOptions = document.querySelector('.wallet-options');
+    const disconnectWalletBtn = document.getElementById('disconnectWalletBtn');
+    const walletInfoDiv = document.getElementById('walletInfo');
+    const walletAddressSpan = document.getElementById('walletAddress');
+    const chainIdSpan = document.getElementById('chainId');
+
+    // Check if MetaMask is installed
+    function isMetaMaskInstalled() {
+        return typeof window.ethereum !== 'undefined';
+    }
+
+    // Function to connect to MetaMask
+    async function connectWallet(walletType) {
+        if (walletType === 'metamask') {
+            if (isMetaMaskInstalled()) {
+                try {
+                    // Request account access
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    const walletAddress = accounts[0];
+
+                    // Get chain ID
+                    const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+
+                    // Display wallet info
+                    walletAddressSpan.textContent = walletAddress;
+                    chainIdSpan.textContent = chainId;
+                    walletInfoDiv.style.display = 'block';
+                    walletOptions.style.display = 'none';
+
+                    // Listen for account changes
+                    window.ethereum.on('accountsChanged', (accounts) => {
+                        if (accounts.length === 0) {
+                            // Handle disconnection
+                            disconnectWallet();
+                        } else {
+                            walletAddressSpan.textContent = accounts[0];
+                        }
+                    });
+
+                    // Listen for chain ID changes
+                    window.ethereum.on('chainChanged', (newChainId) => {
+                        chainIdSpan.textContent = newChainId;
+                    });
+                } catch (error) {
+                    console.error("User denied account access or error occurred:", error);
+                    alert("Could not connect wallet. Please make sure MetaMask is unlocked and try again.");
+                }
+            } else {
+                alert("MetaMask is not installed. Please install MetaMask to use this feature.");
+            }
+        } else {
+            alert("This wallet type is not supported yet.");
+        }
+    }
+
+    // Function to disconnect wallet
+    function disconnectWallet() {
+        walletAddressSpan.textContent = '';
+        chainIdSpan.textContent = '';
+        walletInfoDiv.style.display = 'none';
+        walletOptions.style.display = 'flex';
+    }
+
+    // Event listener for connecting a wallet
+    walletOptions.addEventListener('click', (event) => {
+        const walletCard = event.target.closest('.wallet-card');
+        if (walletCard) {
+            const walletType = walletCard.dataset.wallet;
+            connectWallet(walletType);
+        }
+    });
+
+    // Event listener for disconnect wallet button
+    disconnectWalletBtn.addEventListener('click', disconnectWallet);
+
+    // Check if already connected on page load
+    async function checkConnection() {
+        if (isMetaMaskInstalled()) {
+            try {
+                const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+                if (accounts.length > 0) {
+                    // Already connected
+                    const walletAddress = accounts[0];
+                    const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+
+                    walletAddressSpan.textContent = walletAddress;
+                    chainIdSpan.textContent = chainId;
+                    walletInfoDiv.style.display = 'block';
+                    walletOptions.style.display = 'none';
+
+                    // Listen for account changes
+                    window.ethereum.on('accountsChanged', (accounts) => {
+                        if (accounts.length === 0) {
+                            // Handle disconnection
+                            disconnectWallet();
+                        } else {
+                            walletAddressSpan.textContent = accounts[0];
+                        }
+                    });
+
+                    // Listen for chain ID changes
+                    window.ethereum.on('chainChanged', (newChainId) => {
+                        chainIdSpan.textContent = newChainId;
+                    });
+                }
+            } catch (error) {
+                console.error("Error checking connection:", error);
+            }
+        }
+    }
+
+    checkConnection();
+});
