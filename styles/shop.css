@@ -1,6 +1,6 @@
 body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #c8dcc8,#e6f0e6);
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #c8dcc8, #e6f0e6);
     color: #135029;
     margin: 0;
     min-height: 100vh;
@@ -28,6 +28,7 @@ body {
     position: relative;
     transition: color 0.2s;
 }
+
 .nav a.active,
 .nav a:hover {
     color: #fede00;
@@ -37,13 +38,15 @@ body {
     padding: 60px 0 30px 0;
     text-align: center;
 }
+
 .shop-title {
-    font-family: 'Audiowide', cursive;
+    font-family: "Audiowide", cursive;
     font-size: 2.2rem;
     color: #135029;
     margin-bottom: 12px;
     letter-spacing: 2px;
 }
+
 .shop-subtitle {
     font-size: 1.25rem;
     color: #2a4d2a;
@@ -54,16 +57,18 @@ body {
     padding: 40px 0 80px 0;
 }
 
+/* Main change: Setting two columns */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     max-width: 1200px;
     margin: 0 auto;
+    gap: 20px; /* Consistent gap */
+    padding: 0 20px; /* Add padding to sides */
 }
 
 .product-card {
     border-radius: 20px;
-    margin-left: 15px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -79,15 +84,19 @@ body {
     position: relative;
     margin-bottom: 110px;
 }
+
 .product-img {
-    width: 100%;
+    width: 90%;
     height: 140%;
+    margin-left: 13px;
+    margin-top: 15px;
     border-radius: 15px;
     aspect-ratio: 1/1;
     object-fit: cover;
-    box-shadow: 0 4px 16px rgba(19,80,41,0.10);
+    box-shadow: 0 4px 16px rgba(19, 80, 41, 0.1);
     transition: transform 0.3s;
 }
+
 .nft-badge {
     position: absolute;
     top: 12px;
@@ -97,17 +106,19 @@ body {
     padding: 4px 12px;
     border-radius: 12px;
     font-size: 0.9rem;
-    font-family: 'Audiowide', cursive;
+    font-family: "Audiowide", cursive;
     letter-spacing: 1px;
-    box-shadow: 0 1px 4px rgba(19,80,41,0.10);
+    box-shadow: 0 1px 4px rgba(19, 80, 41, 0.1);
 }
+
 .product-name {
-    font-family: 'Audiowide', cursive;
+    font-family: "Audiowide", cursive;
     font-size: 1.25rem;
     color: #135029;
-    margin: 12px 0 4px 0;
+    margin-top: 50px;
     letter-spacing: 1px;
 }
+
 .product-meta {
     font-size: 1.1rem;
     color: #2a4d2a;
@@ -116,6 +127,7 @@ body {
     align-items: center;
     gap: 8px;
 }
+
 .token-reward {
     background: #e6f0e6;
     color: #135029;
@@ -127,18 +139,19 @@ body {
     align-items: center;
     gap: 4px;
 }
+
 .product-btn {
     background: #135029;
     color: #fff;
-    font-family: 'Audiowide', cursive;
-    font-size: 1.1rem;
+    font-family: "Audiowide", cursive;
+    font-size: 1rem;
     border: none;
     border-radius: 30px;
     padding: 12px 32px;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    margin-top: 8px;
 }
+
 .product-btn:hover {
     background: #fede00;
     color: #135029;
@@ -148,22 +161,25 @@ body {
     text-align: center;
     max-width: 700px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     padding: 32px 20px 24px 20px;
-    box-shadow: 0 4px 16px rgba(19,80,41,0.10);
+    box-shadow: 0 4px 16px rgba(19, 80, 41, 0.1);
 }
+
 .shop-info h2 {
-    font-family: 'Audiowide', cursive;
+    font-family: "Audiowide", cursive;
     color: #135029;
     font-size: 1.5rem;
     margin-bottom: 12px;
 }
+
 .shop-info p {
     font-size: 1.1rem;
     color: #2a4d2a;
     margin-bottom: 18px;
 }
+
 .shop-icons {
     display: flex;
     justify-content: center;
@@ -178,6 +194,7 @@ body {
     padding: 40px 20px;
     text-align: center;
 }
+
 .footer__container {
     max-width: 1200px;
     margin: 0 auto;
@@ -187,38 +204,46 @@ body {
     flex-wrap: wrap;
     gap: 20px;
 }
+
 .footer__logo {
     width: 50px;
     height: auto;
     margin-right: 20px;
     display: inline-block;
 }
+
 .footer__nav {
     display: flex;
     gap: 20px;
 }
+
 .footer__link {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
 }
+
 .footer__link.active,
 .footer__link:hover {
     color: #fede00;
 }
+
 .footer__socials {
     display: flex;
     gap: 20px;
 }
+
 .footer__social-link {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
     font-size: 1.3rem;
 }
+
 .footer__social-link:hover {
     color: #fede00;
 }
+
 .footer__copy {
     font-size: 0.9rem;
 }
@@ -229,90 +254,112 @@ body {
     align-items: flex-start;
     padding: 24px 16px 12px 16px;
     }
+
     .nav {
     margin-top: 25px;
     }
+
     .footer__container {
     flex-direction: column;
     align-items: center;
     }
+
+    .product-img {
+    width: 100%;
+    margin-left: 0px;
+    }
 }
+
 @media (max-width: 600px) {
     .shop-title {
     font-size: 1.2rem;
     }
+
     .shop-subtitle {
     font-size: 1rem;
     }
+
     .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 10px;
     }
+
     .shop-info {
     padding: 24px 10px 16px 10px;
     }
-    .product-card {  
-    padding: 20px 16px 24px 16px;
+
+    .product-card {
+    padding: 10px 8px 12px 8px;
     max-width: 90%;
     margin: 0 auto;
     }
+
     .product-name {
     font-size: 0.8rem;
+    margin-top: 0px;
     }
+
     .product-meta {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
     }
+
     .product-btn {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    padding: 6px 16px;
     }
+
     .footer {
     padding: 30px 10px;
     }
-    .footer__nav, .footer__socials {
+
+    .footer__nav,
+    .footer__socials {
     flex-direction: column;
     gap: 10px;
     }
+
     .footer__logo {
     margin-bottom: 12px;
     }
-}
 
-@media (max-width: 430px) {
-    .shop-title {
-    font-size: 1.2rem;
-    }
-    .shop-subtitle {
-    font-size: 1rem;
-    }
-    .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
     .shop-info {
     width: 70%;
+    padding: 16px 8px;
     }
-    .product-img-wrap {
-    width: 110%;
+}
+
+@media (max-width: 400px) {
+    .shop-title {
+    font-size: 1rem;
     }
-    .product-card {  
-    padding: 10px 8px 12px 8px;
-    margin: 0 auto;
+
+    .shop-subtitle {
+    font-size: 0.8rem;
     }
-    .product-name {
-    font-size: 0.7rem;
+
+    .products-grid {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 5px; /* Reduce gap further */
     }
+
     .product-meta {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     }
+
     .product-card .product-btn {
     display: none;
     }
+
     .token-reward {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     }
+
     .nft-badge {
     font-size: 0.5rem;
-    top: 0px;
+    top: 15px;
     left: 0px;
+    padding: 2px 4px;
     }
 }
 
@@ -337,7 +384,7 @@ body {
     background: #135029;
     margin: 4px 0;
     border-radius: 2px;
-    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1);
 }
 
 @media (max-width: 900px) {
@@ -350,18 +397,20 @@ body {
     height: 100vh;
     margin-top: 1px;
     background: linear-gradient(135deg, #e6f0e6 60%, #c8dcc8 100%);
-    box-shadow: -2px 0 16px rgba(19,80,41,0.08);
+    box-shadow: -2px 0 16px rgba(19, 80, 41, 0.08);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 90px 32px 32px 32px;
     gap: 32px;
-    transition: right 0.4s cubic-bezier(.4,2,.6,1);
+    transition: right 0.4s cubic-bezier(0.4, 2, 0.6, 1);
     z-index: 1001;
     }
+
     .nav.open {
     right: 0;
     }
+
     .nav a {
     font-size: 1.3rem;
     margin: 0 0 16px 0;
@@ -369,13 +418,16 @@ body {
     width: 100%;
     text-align: left;
     }
+
     .header {
     flex-direction: row;
     padding: 20px 10px;
     }
+
     .hamburger {
     display: flex;
     }
+
     body.menu-open {
     overflow: hidden;
     }
@@ -385,9 +437,11 @@ body {
 .hamburger.open .hamburger-bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
+
 .hamburger.open .hamburger-bar:nth-child(2) {
     opacity: 0;
 }
+
 .hamburger.open .hamburger-bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
@@ -413,6 +467,7 @@ body {
     gap: 0;
     transition: none;
     }
+
     .nav a {
     margin-left: 32px;
     font-size: 1.1rem;
@@ -420,8 +475,9 @@ body {
     width: auto;
     text-align: center;
     }
+
     .hamburger {
     display: none !important;
     }
 }
-/* End of Hamburger styles */  
+/* End of Hamburger styles */
