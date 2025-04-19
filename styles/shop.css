@@ -1,0 +1,425 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #c8dcc8,#e6f0e6);
+    color: #135029;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 48px 16px 48px;
+    background: transparent;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.nav a {
+    font-family: "Audiowide", sans-serif;
+    color: #135029;
+    margin-left: 32px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.2s;
+}
+.nav a.active,
+.nav a:hover {
+    color: #fede00;
+}
+
+.shop-hero {
+    padding: 60px 0 30px 0;
+    text-align: center;
+}
+.shop-title {
+    font-family: 'Audiowide', cursive;
+    font-size: 2.2rem;
+    color: #135029;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+.shop-subtitle {
+    font-size: 1.25rem;
+    color: #2a4d2a;
+    margin-bottom: 0;
+}
+
+.shop-products {
+    padding: 40px 0 80px 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.product-img-wrap {
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
+}
+.product-img {
+    width: 100%;
+    height: 140%;
+    border-radius: 15px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    box-shadow: 0 4px 16px rgba(19,80,41,0.10);
+    transition: transform 0.3s;
+}
+.nft-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #fede00;
+    color: #135029;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-family: 'Audiowide', cursive;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 4px rgba(19,80,41,0.10);
+}
+.product-name {
+    font-family: 'Audiowide', cursive;
+    font-size: 1.25rem;
+    color: #135029;
+    margin: 12px 0 4px 0;
+    letter-spacing: 1px;
+}
+.product-meta {
+    font-size: 1.1rem;
+    color: #2a4d2a;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.token-reward {
+    background: #e6f0e6;
+    color: #135029;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 0.95rem;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.product-btn {
+    background: #135029;
+    color: #fff;
+    font-family: 'Audiowide', cursive;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin-top: 8px;
+}
+.product-btn:hover {
+    background: #fede00;
+    color: #135029;
+}
+
+.shop-info {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    padding: 32px 20px 24px 20px;
+    box-shadow: 0 4px 16px rgba(19,80,41,0.10);
+}
+.shop-info h2 {
+    font-family: 'Audiowide', cursive;
+    color: #135029;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+.shop-info p {
+    font-size: 1.1rem;
+    color: #2a4d2a;
+    margin-bottom: 18px;
+}
+.shop-icons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 2rem;
+    color: #135029;
+}
+
+.footer {
+    background-color: #2a4d2a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer__logo {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+    display: inline-block;
+}
+.footer__nav {
+    display: flex;
+    gap: 20px;
+}
+.footer__link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer__link.active,
+.footer__link:hover {
+    color: #fede00;
+}
+.footer__socials {
+    display: flex;
+    gap: 20px;
+}
+.footer__social-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1.3rem;
+}
+.footer__social-link:hover {
+    color: #fede00;
+}
+.footer__copy {
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .header {
+    align-items: flex-start;
+    padding: 24px 16px 12px 16px;
+    }
+    .nav {
+    margin-top: 25px;
+    }
+    .footer__container {
+    flex-direction: column;
+    align-items: center;
+    }
+}
+@media (max-width: 600px) {
+    .shop-title {
+    font-size: 1.2rem;
+    }
+    .shop-subtitle {
+    font-size: 1rem;
+    }
+    .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+    }
+    .shop-info {
+    padding: 24px 10px 16px 10px;
+    }
+    .product-card {  
+    padding: 20px 16px 24px 16px;
+    max-width: 90%;
+    margin: 0 auto;
+    }
+    .product-name {
+    font-size: 0.8rem;
+    }
+    .product-meta {
+    font-size: 0.8rem;
+    }
+    .product-btn {
+    font-size: 0.8rem;
+    }
+    .footer {
+    padding: 30px 10px;
+    }
+    .footer__nav, .footer__socials {
+    flex-direction: column;
+    gap: 10px;
+    }
+    .footer__logo {
+    margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 430px) {
+    .shop-title {
+    font-size: 1.2rem;
+    }
+    .shop-subtitle {
+    font-size: 1rem;
+    }
+    .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .shop-info {
+    width: 70%;
+    }
+    .product-img-wrap {
+    width: 100%;
+    }
+    .product-card {  
+    padding: 10px 8px 12px 8px;
+    margin: 0 auto;
+    }
+    .product-name {
+    font-size: 0.7rem;
+    }
+    .product-meta {
+    font-size: 0.7rem;
+    }
+    .product-card .product-btn {
+    display: none;
+    }
+    .token-reward {
+    font-size: 0.7rem;
+    }
+    .nft-badge {
+    font-size: 0.5rem;
+    top: 0px;
+    left: 0px;
+    }
+}
+
+/* Hamburger styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    margin-left: 24px;
+}
+
+.hamburger-bar {
+    width: 28px;
+    height: 4px;
+    background: #135029;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+@media (max-width: 900px) {
+    .nav {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 50vw;
+    max-width: 320px;
+    height: 100vh;
+    margin-top: 1px;
+    background: linear-gradient(135deg, #e6f0e6 60%, #c8dcc8 100%);
+    box-shadow: -2px 0 16px rgba(19,80,41,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 90px 32px 32px 32px;
+    gap: 32px;
+    transition: right 0.4s cubic-bezier(.4,2,.6,1);
+    z-index: 1001;
+    }
+    .nav.open {
+    right: 0;
+    }
+    .nav a {
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    color: #135029;
+    width: 100%;
+    text-align: left;
+    }
+    .header {
+    flex-direction: row;
+    padding: 20px 10px;
+    }
+    .hamburger {
+    display: flex;
+    }
+    body.menu-open {
+    overflow: hidden;
+    }
+}
+
+/* Hamburger animation (X icon) */
+.hamburger.open .hamburger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open .hamburger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Hide nav on small screens by default */
+@media (max-width: 900px) {
+    .nav {
+    display: flex;
+    }
+}
+
+/* Always show nav as horizontal bar on desktop */
+@media (min-width: 901px) {
+    .nav {
+    position: static !important;
+    flex-direction: row;
+    align-items: center;
+    background: none;
+    height: auto;
+    width: auto;
+    box-shadow: none;
+    padding: 0;
+    gap: 0;
+    transition: none;
+    }
+    .nav a {
+    margin-left: 32px;
+    font-size: 1.1rem;
+    color: #135029;
+    width: auto;
+    text-align: center;
+    }
+    .hamburger {
+    display: none !important;
+    }
+}
+/* End of Hamburger styles */  

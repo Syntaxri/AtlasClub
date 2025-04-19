@@ -100,6 +100,16 @@ header video {
   transform: scale(1.05);
 }
 
+.shopNow a,
+.wallet-connect__button a{
+  color: #135029;
+}
+
+.shopNow a:hover,
+.wallet-connect__button a:hover{
+  color: #eee;
+}
+
 .hero__content {
   position: fixed;
   top: 0px;

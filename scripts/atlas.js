@@ -105,3 +105,41 @@ document.addEventListener('DOMContentLoaded', () => {
   enableMobileCarousel();
   window.addEventListener('resize', enableMobileCarousel);
 });
+
+// Hamburger menu logic for mobile
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+  });
+
+  // Optional: Close nav when clicking a link (for smooth UX)
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+
+  // GSAP hover scale effect for product cards
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, { scale: 1.04, boxShadow: "0 16px 48px rgba(19,80,41,0.25)", duration: 0.3 });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { scale: 1, boxShadow: "0 8px 24px rgba(19,80,41,0.15)", duration: 0.3 });
+    });
+  });
+
+  // Initialize AOS
+  AOS.init({
+    duration: 900,
+    once: true,
+    easing: 'ease-in-out'
+  });
+});
