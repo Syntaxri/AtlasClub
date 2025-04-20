@@ -7,20 +7,25 @@
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="styles/shop.css">
   <link rel="stylesheet" href="styles/wallet.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="header">
-    <a href="index.html" class="logo"><img src="images/logo.png" alt="Atlas Logo"></a>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="wallet.html" class="active">wallet</a>
-    </nav>
-  </header>
+    <header class="header">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Atlas Logo"></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="wallet.html" class="active">wallet</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </header>
     <section class="connect-wallet-section">
         <div class="connect-wallet-container" data-aos="fade-up">
             <h1 class="connect-wallet-title">Connect Your Wallet</h1>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Atlas | Product Detail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Audiowide&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="styles/pdp.css" />
+  <link rel="stylesheet" href="styles/shop.css" />
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Atlas Logo"></a>
+        <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="wallet.html" class="active">wallet</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        </button>
+    </header>
+    <main class="pdp-container" role="main">
+    <!-- Sticky Back to Top -->
+    <button id="backToTop" aria-label="Back to top" title="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <section class="product-hero" data-aos="fade-up">
+      <div class="product-images">
+        <div class="main-image-wrapper">
+          <img id="mainImage" src="images/item1.jpeg" alt="Burning Eye NFT Tee" />
+          <div id="zoomLens"></div>
+          <div id="zoomResult"></div>
+        </div>
+        <div class="thumbnail-carousel" aria-label="Product thumbnails" role="list">
+          <img src="images/item1.jpeg" alt="Burning Eye front view" role="listitem" tabindex="0" />
+          <img src="images/item1.jpeg" alt="Burning Eye back view" role="listitem" tabindex="0" />
+          <img src="images/item1.jpeg" alt="Burning Eye detail" role="listitem" tabindex="0" />
+          <img src="images/item1.jpeg" alt="Burning Eye packaging" role="listitem" tabindex="0" />
+        </div>
+      </div>
+      <div class="product-info">
+        <h1 class="product-title">BURNING EYE NFT Tee</h1>
+        <p class="product-short-desc">
+          Limited edition NFT-backed fashion tee with exclusive design and blockchain provenance.
+        </p>
+        <div class="rating-reviews" aria-label="Product rating and reviews">
+          <div class="stars" aria-hidden="true">
+            <i class="fas fa-star filled"></i>
+            <i class="fas fa-star filled"></i>
+            <i class="fas fa-star filled"></i>
+            <i class="fas fa-star filled"></i>
+            <i class="fas fa-star-half-alt filled"></i>
+          </div>
+          <a href="#customerReviews" class="reviews-link" aria-label="Read 124 customer reviews">124 reviews</a>
+        </div>
+        <div class="price-section" aria-label="Price">
+          <span class="price-discounted" aria-live="polite">$85.00</span>
+          <span class="price-original" aria-hidden="true">$120.00</span>
+          <span class="discount-badge" aria-label="Save 29%">29% OFF</span>
+        </div>
+
+        <form class="product-options" aria-label="Product options">
+          <fieldset>
+            <legend>Size</legend>
+            <label><input type="radio" name="size" value="S" required /> S</label>
+            <label><input type="radio" name="size" value="M" checked /> M</label>
+            <label><input type="radio" name="size" value="L" /> L</label>
+            <label><input type="radio" name="size" value="XL" /> XL</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Color</legend>
+            <label><input type="radio" name="color" value="black" checked /> Black</label>
+            <label><input type="radio" name="color" value="white" /> White</label>
+            <label><input type="radio" name="color" value="green" /> Green</label>
+          </fieldset>
+
+          <div class="quantity-selector">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" />
+          </div>
+
+          <div class="action-buttons">
+            <button type="button" class="btn btn-add-to-cart" aria-label="Add to cart">Add to Cart</button>
+            <button type="button" class="btn btn-buy-now" aria-label="Buy now">Buy Now</button>
+            <button type="button" class="btn btn-wishlist" aria-label="Add to wishlist" title="Add to wishlist">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+        </form>
+
+        <div class="shipping-info" aria-label="Shipping and returns">
+          <p><strong>Shipping:</strong> Free worldwide shipping on orders over $100.</p>
+          <p><strong>Returns:</strong> 30-day hassle-free returns.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-details" data-aos="fade-up">
+      <button class="expand-btn" aria-expanded="false" aria-controls="detailsContent">Product Details + Specifications</button>
+      <div id="detailsContent" class="expandable-content" hidden>
+        <h2>Materials</h2>
+        <p>100% organic cotton, ethically sourced and blockchain verified.</p>
+        <h2>Sizing Guide</h2>
+        <p>Refer to our detailed sizing chart to find your perfect fit.</p>
+        <h2>Care Instructions</h2>
+        <p>Machine wash cold, tumble dry low, do not bleach.</p>
+      </div>
+    </section>
+
+    <section class="customer-reviews" id="customerReviews" data-aos="fade-up">
+      <h2>Customer Reviews</h2>
+      <ul class="reviews-list" aria-live="polite">
+        <li class="review">
+          <div class="review-header">
+            <span class="reviewer-name">Sam D.</span>
+            <div class="stars" aria-label="4.5 stars">
+              <i class="fas fa-star filled"></i>
+              <i class="fas fa-star filled"></i>
+              <i class="fas fa-star filled"></i>
+              <i class="fas fa-star filled"></i>
+              <i class="fas fa-star-half-alt filled"></i>
+            </div>
+          </div>
+          <p class="review-text">Absolutely love this tee! The quality and NFT integration is top-notch.</p>
+          <div class="review-images">
+            <img src="images/review1-1.jpg" alt="Customer review image 1" />
+            <img src="images/review1-2.jpg" alt="Customer review image 2" />
+          </div>
+        </li>
+        <!-- more reviews -->
+      </ul>
+
+      <form class="review-form" aria-label="Submit a product review">
+        <h3>Write a Review</h3>
+        <label for="reviewStars">Your Rating</label>
+        <div class="star-input" role="radiogroup" aria-labelledby="reviewStars">
+          <input type="radio" id="star5" name="rating" value="5" required /><label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
+          <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
+          <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
+          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+        </div>
+        <label for="reviewText">Your Review</label>
+        <textarea id="reviewText" name="reviewText" rows="4" required></textarea>
+        <button type="submit" class="btn btn-submit-review">Submit Review</button>
+      </form>
+    </section>
+
+    <section class="recommended-products" data-aos="fade-up">
+      <h2>Recommended for You</h2>
+      <div class="recommended-grid" aria-label="Recommended products">
+        <article class="recommended-card" tabindex="0">
+          <img src="images/item3.jpeg" alt="Mind Limited NFT Tee" />
+          <h3>Mind Limited</h3>
+          <span class="price">$65.00</span>
+        </article>
+        <article class="recommended-card" tabindex="0">
+          <img src="images/item8.jpeg" alt="Blue Blood NFT Tee" />
+          <h3>Blue Blood</h3>
+          <span class="price">$85.00</span>
+        </article>
+        <article class="recommended-card" tabindex="0">
+          <img src="images/item4.jpeg" alt="Yours NFT Tee" />
+          <h3>Yours</h3>
+          <span class="price">$75.00</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <img src="images/logo.png" alt="Atlas Club Logo" class="footer__logo" />
+      <div class="footer__nav">
+        <a href="shop.html" class="footer__link">Shop</a>
+        <a href="#about" class="footer__link">About</a>
+        <a href="#newsletter" class="footer__link">Newsletter</a>
+      </div>
+      <div class="footer__socials">
+        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer__social-link"><i class="fab fa-discord"></i></a>
+      </div>
+      <p class="footer__copy">&copy; 2025 AtlasClub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="scripts/atlas.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  </script>
+</body>
+</html>

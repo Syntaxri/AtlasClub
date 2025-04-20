@@ -1,5 +1,5 @@
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background: linear-gradient(135deg, #c8dcc8, #e6f0e6);
     color: #135029;
     margin: 0;
@@ -16,7 +16,6 @@ body {
 
 .logo img {
     height: 40px;
-    margin-top: 20px;
 }
 
 .nav a {
@@ -175,7 +174,13 @@ body {
     }
 
     .nav {
-        margin-top: 25px;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .nav a {
+        font-size: 1.3rem;
     }
 
     .footer__container {

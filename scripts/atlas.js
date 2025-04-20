@@ -363,3 +363,101 @@ document.addEventListener('DOMContentLoaded', () => {
 
     checkConnection();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Thumbnail click changes main image
+  const mainImage = document.getElementById('mainImage');
+  const thumbnails = document.querySelectorAll('.thumbnail-carousel img');
+
+  thumbnails.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      thumbnails.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      mainImage.src = thumb.src.replace('-thumb', '-large');
+      mainImage.alt = thumb.alt;
+    });
+    thumb.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        thumb.click();
+      }
+    });
+  });
+
+  // Expandable product details
+  const expandBtn = document.querySelector('.expand-btn');
+  const detailsContent = document.getElementById('detailsContent');
+
+  expandBtn.addEventListener('click', () => {
+    const expanded = expandBtn.getAttribute('aria-expanded') === 'true';
+    expandBtn.setAttribute('aria-expanded', !expanded);
+    if (expanded) {
+      detailsContent.hidden = true;
+      expandBtn.textContent = 'Product Details + Specifications';
+    } else {
+      detailsContent.hidden = false;
+      expandBtn.textContent = 'Hide Details';
+    }
+  });
+
+  // Back to top button
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Review form submission (demo only)
+  const reviewForm = document.querySelector('.review-form');
+  reviewForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for your review! (Demo submission)');
+    reviewForm.reset();
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.querySelector('.recommended-grid');
+  let isDown = false;
+  let startX, scrollLeft;
+
+  // Mouse events
+  grid.addEventListener('mousedown', (e) => {
+    isDown = true;
+    grid.classList.add('dragging');
+    startX = e.pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
+  });
+  grid.addEventListener('mouseleave', () => {
+    isDown = false;
+    grid.classList.remove('dragging');
+  });
+  grid.addEventListener('mouseup', () => {
+    isDown = false;
+    grid.classList.remove('dragging');
+  });
+  grid.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - grid.offsetLeft;
+    const walk = (x - startX) * 1.5; // adjust scroll speed
+    grid.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch events for mobile/fingerprint
+  let touchStartX = 0;
+  let touchScrollLeft = 0;
+  grid.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].pageX;
+    touchScrollLeft = grid.scrollLeft;
+  });
+  grid.addEventListener('touchmove', (e) => {
+    const x = e.touches[0].pageX;
+    const walk = (x - touchStartX) * 1.2; // adjust scroll speed
+    grid.scrollLeft = touchScrollLeft - walk;
+  });
+});
